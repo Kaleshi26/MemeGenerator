@@ -1,11 +1,8 @@
 /* eslint-disable react/prop-types */
-// import { useState, useEffect } from "react";
-// eslint-disable-next-line react/prop-types
-
 import React, { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 
-const Temp = ({ temp, setMeme }) => {
+const Temp = ({ temp, setMeme, searchQuery }) => {
   const row1 = useRef(null);
   const row2 = useRef(null);
   const row3 = useRef(null);
@@ -44,54 +41,34 @@ const Temp = ({ temp, setMeme }) => {
     });
   };
 
+  // Filter memes by name OR description
+  const filteredTemp = temp.filter(
+    (meme) =>
+      meme.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (meme.description &&
+        meme.description.toLowerCase().includes(searchQuery.toLowerCase()))
+  );
+
+  const renderRow = (sliceStart, sliceEnd, rowRef) =>
+    filteredTemp.slice(sliceStart, sliceEnd).map((temps) => (
+      <div key={temps.id} className="template" onClick={() => setMeme(temps)}>
+        <div
+          style={{ backgroundImage: `url(${temps.url})` }}
+          className="meme"
+        ></div>
+      </div>
+    ));
+
   return (
     <div className="Templates">
-      {/* Row 1 */}
       <div className="row" ref={row1}>
-        {temp.slice(0, 3).map((temps, ) => (
-          <div
-            key={temps.id}
-            className="template"
-            onClick={() => setMeme(temps)}
-          >
-            <div
-              style={{ backgroundImage: `url(${temps.url})` }}
-              className="meme"
-            ></div>
-          </div>
-        ))}
+        {renderRow(0, 3, row1)}
       </div>
-
-      {/* Row 2 */}
       <div className="row" ref={row2}>
-        {temp.slice(3, 6).map((temps) => (
-          <div
-            key={temps.id}
-            className="template"
-            onClick={() => setMeme(temps)}
-          >
-            <div
-              style={{ backgroundImage: `url(${temps.url})` }}
-              className="meme"
-            ></div>
-          </div>
-        ))}
+        {renderRow(3, 6, row2)}
       </div>
-
-      {/* Row 3 */}
       <div className="row" ref={row3}>
-        {temp.slice(6, 9).map((temps) => (
-          <div
-            key={temps.id}
-            className="template"
-            onClick={() => setMeme(temps)}
-          >
-            <div
-              style={{ backgroundImage: `url(${temps.url})` }}
-              className="meme"
-            ></div>
-          </div>
-        ))}
+        {renderRow(6, 9, row3)}
       </div>
     </div>
   );
