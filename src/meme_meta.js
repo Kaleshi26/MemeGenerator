@@ -1,47 +1,49 @@
 // src/meme_meta.js
-// Small map of known meme names -> description + keywords.
-// Add more entries as you like. Keys are meme names as returned by imgflip API.
-const memeMeta = {
+
+// Each key is the meme's official name (as in the Imgflip API)
+// description: a short description
+// keywords: an array of search-friendly words
+const memesMeta = {
   "Distracted Boyfriend": {
-    description: "A man looks at another woman while his girlfriend looks shocked/angry — used for 'distracted by new thing' comparisons.",
-    keywords: ["boyfriend", "girlfriend", "man", "woman", "distracted", "looking", "jealous", "cheating"]
+    description: "A man turning to look at another woman while his girlfriend is shocked",
+    keywords: ["boyfriend", "distracted", "looking", "woman", "jealous"]
   },
   "Drake Hotline Bling": {
-    description: "Two-panel Drake meme — top panel: disapproval; bottom: approval. Used to contrast preferences.",
-    keywords: ["drake", "hotline bling", "no", "yes", "approve", "disapprove", "preference"]
-  },
-  "Woman Yelling at a Cat": {
-    description: "A woman dramatically yelling and a confused cat sitting at a table — used for arguments or exaggerated reactions.",
-    keywords: ["woman", "yelling", "cat", "table", "angry", "screaming"]
+    description: "Drake expressing dislike for one thing and liking another",
+    keywords: ["drake", "hotline", "bling", "like", "dislike", "no", "yes"]
   },
   "Two Buttons": {
-    description: "Person sweating trying to pick between two buttons. Used where two choices are hard to pick.",
-    keywords: ["two buttons", "choices", "decision", "sweating", "button", "choose"]
+    description: "A person sweating while trying to choose between two options",
+    keywords: ["buttons", "choice", "sweat", "decision", "press"]
   },
   "Change My Mind": {
-    description: "Man sitting at a table with a sign that invites debate — used for expressing controversial opinions or takes.",
-    keywords: ["change my mind", "table", "sign", "opinion", "debate", "take"]
+    description: "Man sitting at a table with a sign challenging others to change his mind",
+    keywords: ["change", "mind", "table", "challenge", "sign"]
   },
-  "Left Exit 12 Off Ramp": {
-    description: "Car swerving off the highway to exit — used to show an abrupt change of choice or preference.",
-    keywords: ["left exit", "off ramp", "car", "swerve", "change", "exit"]
+  "Mocking SpongeBob": {
+    description: "SpongeBob mocking someone by repeating their words sarcastically",
+    keywords: ["spongebob", "mocking", "sarcastic", "repeat", "funny"]
   },
   "Expanding Brain": {
-    description: "Multiple panels of increasingly 'expansive' brain images — used to compare levels of thought or logic.",
-    keywords: ["expanding brain", "brain", "levels", "intelligence", "thought"]
-  },
-  "Is This A Pigeon?": {
-    description: "Anime man pointing at a butterfly asking if it is a pigeon — used for mislabeling or confusion.",
-    keywords: ["pigeon", "butterfly", "is this a pigeon", "confused", "anime"]
-  },
-  "Mocking Spongebob": {
-    description: "Spongebob in a mocking pose (alternating-case text) — used for mocking or sarcastic repetition.",
-    keywords: ["mocking", "spongebob", "sarcastic", "repeat"]
+    description: "Series of brain images representing levels of intelligence or awareness",
+    keywords: ["brain", "expanding", "thinking", "intelligence", "levels"]
   },
   "Batman Slapping Robin": {
-    description: "Batman slaps Robin — used to interrupt or shut down a statement quickly.",
-    keywords: ["batman", "robin", "slap", "interrupt"]
+    description: "Batman slaps Robin while Robin tries to speak",
+    keywords: ["batman", "robin", "slap", "comic", "fight"]
+  },
+  "Left Exit 12 Off Ramp": {
+    description: "Car swerving off highway exit to avoid or pick something",
+    keywords: ["exit", "off ramp", "car", "swerve", "highway"]
+  },
+  "Is This a Pigeon?": {
+    description: "Anime character misidentifies a butterfly as a pigeon",
+    keywords: ["pigeon", "butterfly", "anime", "misidentify", "confused"]
+  },
+  "Running Away Balloon": {
+    description: "Boy letting go of a balloon that floats away",
+    keywords: ["balloon", "running", "away", "boy", "letting go"]
   }
 };
 
-export default memeMeta;
+export default memesMeta;
